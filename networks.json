@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "Azimuth": {
+      "address": "0x223c067f8cf28ae173ee5cafea60ca44c335fecb",
+      "startBlock": 6784880
+    }
+  }
+}

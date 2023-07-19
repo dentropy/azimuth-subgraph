@@ -1,0 +1,145 @@
+type OwnerChanged @entity(immutable: true) {
+  id: Bytes!
+  point: BigInt! # uint32
+  owner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Activated @entity(immutable: true) {
+  id: Bytes!
+  point: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Spawned @entity(immutable: true) {
+  id: Bytes!
+  prefix: BigInt! # uint32
+  child: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type EscapeRequested @entity(immutable: true) {
+  id: Bytes!
+  point: BigInt! # uint32
+  sponsor: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type EscapeCanceled @entity(immutable: true) {
+  id: Bytes!
+  point: BigInt! # uint32
+  sponsor: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type EscapeAccepted @entity(immutable: true) {
+  id: Bytes!
+  point: BigInt! # uint32
+  sponsor: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type LostSponsor @entity(immutable: true) {
+  id: Bytes!
+  point: BigInt! # uint32
+  sponsor: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ChangedKeys @entity(immutable: true) {
+  id: Bytes!
+  point: BigInt! # uint32
+  encryptionKey: Bytes! # bytes32
+  authenticationKey: Bytes! # bytes32
+  cryptoSuiteVersion: BigInt! # uint32
+  keyRevisionNumber: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type BrokeContinuity @entity(immutable: true) {
+  id: Bytes!
+  point: BigInt! # uint32
+  number: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ChangedSpawnProxy @entity(immutable: true) {
+  id: Bytes!
+  point: BigInt! # uint32
+  spawnProxy: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ChangedTransferProxy @entity(immutable: true) {
+  id: Bytes!
+  point: BigInt! # uint32
+  transferProxy: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ChangedManagementProxy @entity(immutable: true) {
+  id: Bytes!
+  point: BigInt! # uint32
+  managementProxy: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ChangedVotingProxy @entity(immutable: true) {
+  id: Bytes!
+  point: BigInt! # uint32
+  votingProxy: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ChangedDns @entity(immutable: true) {
+  id: Bytes!
+  primary: String! # string
+  secondary: String! # string
+  tertiary: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipRenounced @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
