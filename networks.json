@@ -3,6 +3,27 @@
     "Azimuth": {
       "address": "0x223c067f8cf28ae173ee5cafea60ca44c335fecb",
       "startBlock": 6784880
+    },
+    "Ecliptic": {
+      "address": "0x33eecbf908478c10614626a9d304bfe18b78dd73"
+    },
+    "Polls": {
+      "address": "0x7fecab617c868bb5996d99d95200d2fa708218e4"
+    },
+    "LinearStarRelease": {
+      "address": "0x86cd9cd0992f04231751e3761de45cecea5d1801"
+    },
+    "ConditionalStarRelease": {
+      "address": "0x8c241098c3d3498fe1261421633fd57986d74aea"
+    },
+    "Claims": {
+      "address": "0xe7e7f69b34d7d9bd8d61fb22c33b22708947971a"
+    },
+    "Censures": {
+      "address": "0x325f68d32bdee6ed86e7235ff2480e2a433d6189"
+    },
+    "DelegatedSending": {
+      "address": "0xf6b461fe1ad4bd2ce25b23fe0aff2ac19b3dfa76"
     }
   }
 }

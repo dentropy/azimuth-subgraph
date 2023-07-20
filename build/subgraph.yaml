@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: Azimuth
@@ -32,7 +32,7 @@ dataSources:
         - OwnershipTransferred
       abis:
         - name: Azimuth
-          file: ./abis/Azimuth.json
+          file: Azimuth/abis/Azimuth.json
       eventHandlers:
         - event: OwnerChanged(indexed uint32,indexed address)
           handler: handleOwnerChanged
@@ -66,7 +66,7 @@ dataSources:
           handler: handleOwnershipRenounced
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
-      file: ./src/azimuth.ts
+      file: Azimuth/Azimuth.wasm
   - kind: ethereum
     name: Ecliptic
     network: mainnet
@@ -87,7 +87,7 @@ dataSources:
         - EclipticOwnershipTransferred
       abis:
         - name: Ecliptic
-          file: ./abis/Ecliptic.json
+          file: Ecliptic/abis/Ecliptic.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
@@ -101,7 +101,7 @@ dataSources:
           handler: handleOwnershipRenounced
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
-      file: ./src/ecliptic.ts
+      file: Ecliptic/Ecliptic.wasm
   - kind: ethereum
     name: Polls
     network: mainnet
@@ -122,7 +122,7 @@ dataSources:
         - PollsOwnershipTransferred
       abis:
         - name: Polls
-          file: ./abis/Polls.json
+          file: Polls/abis/Polls.json
       eventHandlers:
         - event: UpgradePollStarted(address)
           handler: handleUpgradePollStarted
@@ -136,7 +136,7 @@ dataSources:
           handler: handleOwnershipRenounced
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
-      file: ./src/polls.ts
+      file: Polls/Polls.wasm
   - kind: ethereum
     name: LinearStarRelease
     network: mainnet
@@ -153,13 +153,13 @@ dataSources:
         - LinearStarReleaseOwnershipTransferred
       abis:
         - name: LinearStarRelease
-          file: ./abis/LinearStarRelease.json
+          file: LinearStarRelease/abis/LinearStarRelease.json
       eventHandlers:
         - event: OwnershipRenounced(indexed address)
           handler: handleOwnershipRenounced
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
-      file: ./src/linear-star-release.ts
+      file: LinearStarRelease/LinearStarRelease.wasm
   - kind: ethereum
     name: ConditionalStarRelease
     network: mainnet
@@ -178,7 +178,7 @@ dataSources:
         - ConditionalStarReleaseOwnershipTransferred
       abis:
         - name: ConditionalStarRelease
-          file: ./abis/ConditionalStarRelease.json
+          file: ConditionalStarRelease/abis/ConditionalStarRelease.json
       eventHandlers:
         - event: ConditionCompleted(indexed uint8,uint256)
           handler: handleConditionCompleted
@@ -188,7 +188,7 @@ dataSources:
           handler: handleOwnershipRenounced
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
-      file: ./src/conditional-star-release.ts
+      file: ConditionalStarRelease/ConditionalStarRelease.wasm
   - kind: ethereum
     name: Claims
     network: mainnet
@@ -205,13 +205,13 @@ dataSources:
         - ClaimRemoved
       abis:
         - name: Claims
-          file: ./abis/Claims.json
+          file: Claims/abis/Claims.json
       eventHandlers:
         - event: ClaimAdded(indexed uint32,string,string,bytes)
           handler: handleClaimAdded
         - event: ClaimRemoved(indexed uint32,string,string)
           handler: handleClaimRemoved
-      file: ./src/claims.ts
+      file: Claims/Claims.wasm
   - kind: ethereum
     name: Censures
     network: mainnet
@@ -228,13 +228,13 @@ dataSources:
         - Forgiven
       abis:
         - name: Censures
-          file: ./abis/Censures.json
+          file: Censures/abis/Censures.json
       eventHandlers:
         - event: Censured(indexed uint16,indexed uint32)
           handler: handleCensured
         - event: Forgiven(indexed uint16,indexed uint32)
           handler: handleForgiven
-      file: ./src/censures.ts
+      file: Censures/Censures.wasm
   - kind: ethereum
     name: DelegatedSending
     network: mainnet
@@ -250,8 +250,8 @@ dataSources:
         - Sent
       abis:
         - name: DelegatedSending
-          file: ./abis/DelegatedSending.json
+          file: DelegatedSending/abis/DelegatedSending.json
       eventHandlers:
         - event: Sent(indexed uint16,indexed uint64,uint32,uint32,address)
           handler: handleSent
-      file: ./src/delegated-sending.ts
+      file: DelegatedSending/DelegatedSending.wasm
